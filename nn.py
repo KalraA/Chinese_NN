@@ -4,7 +4,7 @@ from keras.layers.recurrent import LSTM
 from keras.optimizers import rmsprop
 import numpy as np
 model = Sequential()
-model.add(LSTM(100, return_sequences=False, input_shape=(None, 3)))
+model.add(LSTM(100, stateful=True, return_sequences=False, input_shape=(None, 3)))
 model.add(Dense(3, input_dim=100))
 model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
