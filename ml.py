@@ -26,7 +26,7 @@ model.add(Dropout('0.5'))
 model.add(Dense(3716))
 model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adagrad')
-model.fit(X_data[:-1:], np.reshape(X_data[1::], (672*17, 3716)), batch_size=batch_size, nb_epoch=1, shuffle=False)
+model.fit(X_data[:-1:], np.reshape(X_data[1::], (672, 3716)), batch_size=batch_size, nb_epoch=1, shuffle=False)
 array_of_chars = array_of_chars
 infile = open('data.txt', 'r').read().decode('utf8')
 X_data = np.zeros((422689, 1, 3716))
